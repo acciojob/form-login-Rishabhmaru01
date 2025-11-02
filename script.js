@@ -1,25 +1,12 @@
 function getFormvalue() {
     //Write your code here
-	  let firstName = document.getElementById("fname").value.trim();
-      let lastName = document.getElementById("lname").value.trim();
+      const form = document.forms[0];
+      const firstName = form.elements["fname"].value.trim();
+      const lastName = form.elements["lname"].value.trim();
 
-      // Handle empty fields
-      if (!firstName && !lastName) {
-        alert("Please enter both first and last name.");
-        return false;
-      } else if (!firstName) {
-        alert("Please enter your first name.");
-        return false;
-      } else if (!lastName) {
-        alert("Please enter your last name.");
-        return false;
-      }
-
-      // Combine names and display
-      let fullName = `${firstName} ${lastName}`;
+      const fullName = `${firstName} ${lastName}`.trim();
       alert(fullName);
 
-      // Prevent form from reloading the page
-      return false;
+      return false; // Prevent reload
 
 }
